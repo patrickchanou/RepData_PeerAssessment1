@@ -6,7 +6,7 @@ activity <- read.csv("activity.csv", colClasses = c("numeric", "character",
 head(activity)
 
 names(activity)
-## [1] "steps"    "date"     "interval"
+# [1] "steps"    "date"     "interval"
 library(lattice)
 activity$date <- as.Date(activity$date, "%Y-%m-%d")
 
@@ -24,16 +24,16 @@ plot of chunk unnamed-chunk-5
 
 And the mean and median is
 mean(StepsTotal$steps)
-## [1] 10766
+# [1] 10766
 median(StepsTotal$steps)
-## [1] 10765
+# [1] 10765
 
 The second approach is to make a data frame first with the values that I need I create a data frame with the days and the total of steps by day
 steps <- rep(NA, 61)
 day <- rep("NA", 61)
 stepsday <- tapply(activity$steps, activity$date, sum, na.rm = T)
 length(stepsday)
-## [1] 61
+# [1] 61
 for (i in 1:61) {
     steps[i] <- stepsday[[i]]
     day[i] <- names(stepsday)[i]
@@ -42,13 +42,13 @@ for (i in 1:61) {
 then the data frame is 
 df <- data.frame(day, steps)
 head(df)
-##          day steps
-## 1 2012-10-01     0
-## 2 2012-10-02   126
-## 3 2012-10-03 11352
-## 4 2012-10-04 12116
-## 5 2012-10-05 13294
-## 6 2012-10-06 15420
+#          day steps
+# 1 2012-10-01     0
+# 2 2012-10-02   126
+# 3 2012-10-03 11352
+# 4 2012-10-04 12116
+# 5 2012-10-05 13294
+# 6 2012-10-06 15420
 
 Now i make the histogram
 hist(df$steps, main = "Total steps by day", xlab = "day", col = "green")
