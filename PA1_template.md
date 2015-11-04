@@ -1,6 +1,6 @@
-Reproducible Research: Peer Assessment 1
+##Reproducible Research: Peer Assessment 1
 
-Loading and preprocessing the data
+##Loading and preprocessing the data
 
 if(!file.exists('activity.csv')){
     unzip('activity.zip')
@@ -11,7 +11,7 @@ names(activity)
 library(lattice)
 activity$date <- as.Date(activity$date, "%Y-%m-%d")
 
-What is mean total number of steps taken per day?
+##What is mean total number of steps taken per day?
 I will use to approaches 
 
 First is using aggregate function
