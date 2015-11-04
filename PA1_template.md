@@ -53,7 +53,7 @@ head(df)
 Now i make the histogram
 hist(df$steps, main = "Total steps by day", xlab = "day", col = "green")
 
-plot of chunk unnamed-chunk-9 
+
 
 This second histogram is a bit differnt because the are some day that we have no data for the steps.
 
@@ -69,7 +69,6 @@ plot(row.names(time_series), time_series, type = "l", xlab = "5-min interval",
     ylab = "Average across all Days", main = "Average number of steps taken", 
     col = "red")
 
-plot of chunk unnamed-chunk-11 
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 max_interval <- which.max(time_series)
@@ -108,7 +107,7 @@ StepsTotal2 <- aggregate(steps ~ date, data = new_activity, sum, na.rm = TRUE)
 The Histogram is 
 hist(StepsTotal2$steps, main = "Total steps by day", xlab = "day", col = "red")
 
-plot of chunk unnamed-chunk-17 
+
 
 And the mean and median is
 mean(StepsTotal2$steps)
