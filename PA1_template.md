@@ -7,7 +7,7 @@ if(!file.exists('activity.csv')){
 }
 activityData <- read.csv('activity.csv')
 names(activity)
-## [1] "steps"    "date"     "interval"
+# [1] "steps"    "date"     "interval"
 library(lattice)
 activity$date <- as.Date(activity$date, "%Y-%m-%d")
 
