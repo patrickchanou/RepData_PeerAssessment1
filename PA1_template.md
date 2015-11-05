@@ -1,4 +1,4 @@
-Reproducible Research: Peer Assessment 1
+##Reproducible Research: Peer Assessment 1
 
 Loading and preprocessing the data
 activity <- read.csv("activity.csv", colClasses = c("numeric", "character", 
@@ -6,7 +6,7 @@ activity <- read.csv("activity.csv", colClasses = c("numeric", "character",
 head(activity)
 
 names(activity)
-# [1] "steps"    "date"     "interval"
+[1] "steps"    "date"     "interval"
 library(lattice)
 activity$date <- as.Date(activity$date, "%Y-%m-%d")
 
@@ -24,16 +24,16 @@ plot of chunk unnamed-chunk-5
 
 And the mean and median is
 mean(StepsTotal$steps)
-# [1] 10766
+[1] 10766
 median(StepsTotal$steps)
-# [1] 10765
+[1] 10765
 
 The second approach is to make a data frame first with the values that I need I create a data frame with the days and the total of steps by day
 steps <- rep(NA, 61)
 day <- rep("NA", 61)
 stepsday <- tapply(activity$steps, activity$date, sum, na.rm = T)
 length(stepsday)
-# [1] 61
+[1] 61
 for (i in 1:61) {
     steps[i] <- stepsday[[i]]
     day[i] <- names(stepsday)[i]
@@ -73,14 +73,14 @@ plot(row.names(time_series), time_series, type = "l", xlab = "5-min interval",
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 max_interval <- which.max(time_series)
 names(max_interval)
-## [1] "835"
+[1] "835"
 
 Imputing missing values
 
 Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 activity_NA <- sum(is.na(activity))
 activity_NA
-## [1] 2304
+[1] 2304
 
 Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval,etc
 
@@ -111,9 +111,9 @@ hist(StepsTotal2$steps, main = "Total steps by day", xlab = "day", col = "red")
 
 And the mean and median is
 mean(StepsTotal2$steps)
-## [1] 10766
+[1] 10766
 median(StepsTotal2$steps)
-## [1] 10766
+[1] 10766
 
 After replacing the mean is the same but the median is a little bit different
 
