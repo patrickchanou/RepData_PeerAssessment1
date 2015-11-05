@@ -42,13 +42,13 @@ for (i in 1:61) {
 then the data frame is 
 df <- data.frame(day, steps)
 head(df)
-#          day steps
-# 1 2012-10-01     0
-# 2 2012-10-02   126
-# 3 2012-10-03 11352
-# 4 2012-10-04 12116
-# 5 2012-10-05 13294
-# 6 2012-10-06 15420
+          day steps
+ 1 2012-10-01     0
+ 2 2012-10-02   126
+ 3 2012-10-03 11352
+ 4 2012-10-04 12116
+ 5 2012-10-05 13294
+ 6 2012-10-06 15420
 
 Now i make the histogram
 hist(df$steps, main = "Total steps by day", xlab = "day", col = "green")
